@@ -13,7 +13,9 @@ app.use('/',userRoute);
 const adminRoute=require('./routes/adminRoute');
 app.use('/admin',adminRoute);
 
+try{
+    app.listen(3000,function(){
+        console.log("Server is running...");
+    }); 
+}catch(err){console.log(err)}
 
-app.listen(3000,function(){
-    console.log("Server is running...");
-}); 
