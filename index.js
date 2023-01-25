@@ -1,5 +1,6 @@
 const mongoose =require("mongoose");
-mongoose.connect("mongodb://localhost:27017/user");
+
+ 
 
 
 const express = require("express");
@@ -13,9 +14,15 @@ app.use('/',userRoute);
 const adminRoute=require('./routes/adminRoute');
 app.use('/admin',adminRoute);
 
-try{
+const start = async () => {
+    try {
+        await mongoose.connect("mongodb://localhost:27017/user");
+    } catch (error) {
+        console.log(error);
+    }
     app.listen(3000,function(){
         console.log("Server is running...");
-    }); 
-}catch(err){console.log(err)}
-
+    });
+}
+    
+start();
