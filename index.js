@@ -16,7 +16,7 @@ app.use('/admin',adminRoute);
 
 const start = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/user");
+        await mongoose.connect("mongodb+srv://dn2:dn2@mycluster.umnasup.mongodb.net/?retryWrites=true&w=majority");
     } catch (error) {
         console.log(error);
     }
