@@ -1,0 +1,272 @@
+<% include('../layouts/header.ejs') %>
+    <style>
+        button {
+            margin: 20px;
+        }
+
+        .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+                7px 7px 20px 0px rgba(0, 0, 0, .1),
+                4px 4px 5px 0px rgba(0, 0, 0, .1);
+            outline: none;
+        }
+
+
+
+
+        .btn-7 {
+            background: linear-gradient(0deg, rgba(255, 151, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+            line-height: 42px;
+            padding: 0;
+            border: none;
+        }
+
+        .btn-7 span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-7:before,
+        .btn-7:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 0;
+            background: rgba(251, 75, 2, 1);
+            box-shadow:
+                -7px -7px 20px 0px rgba(255, 255, 255, .9),
+                -4px -4px 5px 0px rgba(255, 255, 255, .9),
+                7px 7px 20px 0px rgba(0, 0, 0, .2),
+                4px 4px 5px 0px rgba(0, 0, 0, .3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-7:before {
+            height: 0%;
+            width: 2px;
+        }
+
+        .btn-7:after {
+            width: 0%;
+            height: 2px;
+        }
+
+        .btn-7:hover {
+            color: rgba(251, 75, 2, 1);
+            background: transparent;
+        }
+
+        .btn-7:hover:before {
+            height: 100%;
+        }
+
+        .btn-7:hover:after {
+            width: 100%;
+        }
+
+        .btn-7 span:before,
+        .btn-7 span:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            background: rgba(251, 75, 2, 1);
+            box-shadow:
+                -7px -7px 20px 0px rgba(255, 255, 255, .9),
+                -4px -4px 5px 0px rgba(255, 255, 255, .9),
+                7px 7px 20px 0px rgba(0, 0, 0, .2),
+                4px 4px 5px 0px rgba(0, 0, 0, .3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-7 span:before {
+            width: 2px;
+            height: 0%;
+        }
+
+        .btn-7 span:after {
+            height: 2px;
+            width: 0%;
+        }
+
+        .btn-7 span:hover:before {
+            height: 100%;
+        }
+
+        .btn-7 span:hover:after {
+            width: 100%;
+        }
+
+
+
+        .btn {
+            position: relative;
+            width: 90px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            background: #00bfff;
+            color: #fff;
+            border-radius: 80px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-top: 2px solid #e6e6fa;
+            border-left: 2px solid #e6e6fa;
+            padding-left: 60px;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+            margin: inherit;
+        }
+
+        .btn:hover {
+            padding-left: 0;
+            padding-right: 60px;
+            color: #fff;
+        }
+
+        .btn span {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            left: 5px;
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 900;
+            transition: 0.5s cubic-bezier(0.4, 0, 1, 1);
+        }
+
+        .btn:hover span {
+            left: calc(100% - 76px);
+        }
+
+        .btn::after {
+            position: absolute;
+            content: "";
+            width: 80px;
+            height: 100%;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateX(-175px) skew(25deg);
+            transition: 0.75s ease-in-out;
+        }
+
+        .btn:hover::after {
+            transform: translateX(175px) skew(25deg);
+        }
+
+        body {
+            background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+            background-repeat: no-repeat;
+        }
+
+
+        #card {
+            background: #fbfbfb;
+            border-radius: 15px;
+            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+            height: 410px;
+            margin: 6rem auto 8.1rem auto;
+            width: 329px;
+        }
+
+        .image {
+            position: relative;
+
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: large;
+        }
+
+
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+
+        #customers td.one {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+
+    <div>
+        <div>
+            <h1 style="text-align: center;">Welcome Admin <%= admin.name %>
+                    <a class="custom-btn btn-7" href="/admin/logout">
+                        <span>Logout</span>
+                    </a>
+
+        </div>
+        </h1>
+
+
+        <div id="card">
+            <div>
+                <img class="image" src="userimages/<%= admin.image %>" alt="<%= admin.image %>" width="100px" height="100px">
+            </div>
+            <table id="customers">
+                <tr>
+                    <td class="one">Email:</td>
+                    <td>
+                        <%= admin.email %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="one">Mobile:</td>
+                    <td>
+                        <%= admin.mobile %>
+                    </td>
+                </tr>
+            </table>
+            <a class="btn" href="/admin/dashboard">Dashboard <span>&#8594;</span></a>
+        </div>
+    </div>
+
+
+
+
+
+    <% include('../layouts/footer.ejs') %>
