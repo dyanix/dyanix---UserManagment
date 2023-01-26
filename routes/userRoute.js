@@ -24,7 +24,7 @@ user_route.use(express.static('public'));
 
 const storage = multer.diskStorage({
     destination: function (req,file, cb) {
-        cb(null, path.join(__dirname, '../public/userimages'));
+        cb(null, path.join(__dirname,'../public/userimages'));
     },
 
     filename: function(req,file, cb) {
@@ -33,6 +33,8 @@ const storage = multer.diskStorage({
 
     }
 });
+
+
 
 const upload = multer({storage:storage});
 

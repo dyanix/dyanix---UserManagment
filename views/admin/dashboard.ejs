@@ -79,7 +79,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Mobile</th>
-            <th>Image</th>
+            <!-- <th>Image</th> -->
             <th>Verified</th>
             <th>Actions</th>
         </tr>
@@ -96,8 +96,8 @@
                     <td>
                         <%= users[i].mobile %>
                     </td>
-                    <td><img src="/userimages/<%= users[i].image %>" alt="<%= users[i].image %>" width="100px"
-                            height="100px"></td>
+                    <!-- <td><img src="/userimages/<%= users[i].image %>" alt="<%= users[i].image %>" width="100px"
+                            height="100px"></td> -->
                     <td>
                         <% if(users[i].is_verified==0){ %>
                             <p>Not Verified</p>
