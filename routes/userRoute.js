@@ -45,6 +45,8 @@ user_route.get('/register',auth.isLogout, userController.loadRegister);
 
 user_route.post('/register',upload.single('image'),userController.insertUser);
 
+
+
 user_route.get('/verify',userController.verifyMail);
 
 user_route.get('/',auth.isLogout,userController.loginLoad);
@@ -61,7 +63,6 @@ user_route.post('/forget',userController.forgetVerify);
 
 user_route.get('/forget-password',auth.isLogout,userController.forgetPasswordLoad);
 
-// user_route.get('/registration',auth.isLogout,userController.registerLoad);
 
 user_route.post('/forget-password',userController.resetPassword);
 
