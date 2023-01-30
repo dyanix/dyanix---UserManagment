@@ -1,5 +1,7 @@
 const mongoose =require("mongoose");
 
+require('dotenv').config()
+
  
 
 const express = require("express");
@@ -15,7 +17,7 @@ app.use('/admin',adminRoute);
 
 const start = async () => {
     try {
-        await mongoose.connect("mongodb+srv://dn2:dn2@mycluster.umnasup.mongodb.net/?retryWrites=true&w=majority");
+        mongoose.connect(process.env.MONGODB_URL);
         
     } catch (error) {
         console.log(error);

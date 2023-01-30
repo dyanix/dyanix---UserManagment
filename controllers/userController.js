@@ -355,8 +355,7 @@ const editLoad = async(req,res)=>{
 const updateProfile = async(req,res)=>{
     try {
         if (req.file) {
-            // const userData =  await User.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,mobile:req.body.mno,image:req.file.filename}});
-            const userData =  await User.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,mobile:req.body.mno}});
+            const userData =  await User.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name,email:req.body.email,mobile:req.body.mno,image:req.file.filename}});
 
         } 
         else {
